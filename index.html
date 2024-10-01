@@ -16,46 +16,71 @@
         <h1 class="font-bold text-lg text-white" id="profile">
           Khusboo Kumari
         </h1>
-
-        <nav class="md:block" id="navMenu">
-          <ul class=" hidden md:flex  flex-col md:flex-row md:space-x-4">
-            <li>
-              <a href="#skills" class="hover:text-blue-500 text-white"
-                >Skills</a
+        <nav class="bg-gray-800 p-3">
+          <div class="flex justify-between items-center">
+            <!-- Hamburger button for mobile -->
+            <button
+              id="menuButton"
+              class="text-white md:hidden focus:outline-none"
+              onclick="toggleMenu()"
+            >
+              <!-- Hamburger Icon -->
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-            </li>
-            <li>
-              <a href="#placement-series" class="hover:text-blue-500 text-white"
-                >Placement Series</a
-              >
-            </li>
-            <li>
-              <a href="#projects" class="hover:text-blue-500 text-white"
-                >Projects</a
-              >
-            </li>
-            <li>
-              <a href="#education" class="hover:text-blue-500 text-white"
-                >Education</a
-              >
-            </li>
-            <li>
-              <a href="#contact" class="hover:text-blue-500 text-white"
-                >Contact</a
-              >
-            </li>
-            <li>
-              <a
-                href="SeptResume.pdf"
-                target="_blank"
-                id="keepResume"
-                class="hover:text-blue-500 text-white"
-                >Resume</a
-              >
-            </li>
-          </ul>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+            </button>
+    
+            <!-- Navigation Menu for Desktop -->
+            <ul
+              id="navMenu"
+              class="hidden md:flex flex-col md:flex-row md:space-x-4 text-white"
+            >
+              <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
+              <li><a href="#placement-series" class="hover:text-blue-500">Placement Series</a></li>
+              <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+              <li><a href="#education" class="hover:text-blue-500">Education</a></li>
+              <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+              <li>
+                <a
+                  href="SeptResume.pdf"
+                  target="_blank"
+                  id="keepResume"
+                  class="hover:text-blue-500"
+                  >Resume</a
+                >
+              </li>
+            </ul>
+          </div>
+    
+          <!-- Mobile Menu (collapsible) -->
+          <div id="mobileMenu" class="md:hidden hidden flex flex-col space-y-4 mt-4">
+            <a href="#skills" class="hover:text-blue-500 text-white">Skills</a>
+            <a href="#placement-series" class="hover:text-blue-500 text-white">Placement Series</a>
+            <a href="#projects" class="hover:text-blue-500 text-white">Projects</a>
+            <a href="#education" class="hover:text-blue-500 text-white">Education</a>
+            <a href="#contact" class="hover:text-blue-500 text-white">Contact</a>
+            <a
+              href="SeptResume.pdf"
+              target="_blank"
+              id="keepResume"
+              class="hover:text-blue-500 text-white"
+              >Resume</a
+            >
+          </div>
         </nav>
       </div>
+    
       <div
         id="header-content"
         class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between"
@@ -80,6 +105,9 @@
         </div>
       </div>
     </header>
+    
+    
+    
 
     <section class="skills py-8" id="skills">
       <div class="container mx-auto text-center">
@@ -369,5 +397,16 @@
         </div>
       </div>
     </footer>
+   
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const profile = document.getElementById('profile');
+        
+        menu.classList.toggle('hidden');  // Toggle mobile menu visibility
+        profile.classList.toggle('hidden'); // Hide or show profile heading
+      }
+    </script>
   </body>
 </html>
